@@ -1,5 +1,12 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "scrape.py" }
+    "builds":[
+        {
+            "src": "scrape.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/(.*)", "dest": "scrape.py" }
     ]
   }
