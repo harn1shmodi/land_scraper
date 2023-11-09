@@ -1,0 +1,44 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraping App</title>
+</head>
+<body>
+    <h1>Web Scraping App</h1>
+    
+    <form method="POST">
+        <label for="from_date">From Date:</label>
+        <input type="text" id="from_date" name="from_date" required>
+
+        <label for="county">County:</label>
+        <select id="county" name="county" required>
+            <option value="MiddlesexNorth">North Middlesex</option>
+            <option value="MiddlesexSouth">South Middlesex</option>
+            <option value="BerkSouth">South Berkshire</option>
+            <option value="BerkNorth">North Berkshire</option>
+            <option value="BerkMiddle">Middle Berkshire</option>
+            <option value="Hampshire">Hampshire</option>
+            <option value="Franklin">Franklin</option>
+            <option value="Dukes">Dukes</option>
+            <option value="Suffolk">Suffolk</option>
+            <option value="Worcester">Worcester</option>
+            <option value="Nantucket">Nantucket</option>
+            <!-- Add other county options here -->
+
+        </select>
+
+        <button type="submit">Scrape Data</button>
+    </form>
+
+    {% if csv_path %}
+        <a href="{{ csv_path }}" download="clean_data.csv">
+            <button>Download CSV</button>
+        </a>
+    {% endif %}
+</body>
+</html>
