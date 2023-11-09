@@ -1,5 +1,5 @@
 {
     "rewrites": [
-      { "source": "/(.*)", "destination": "scrape" }
+      { "source": "/(.*)", "destination": "scrape.py" }
     ]
   }
